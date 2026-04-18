@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISIONARY | Premium Eyewear Store</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-card">
+            <h2>VISIONARY</h2>
+            <input type="text" id="reg-name" placeholder="Full Name">
+            <input type="email" id="reg-email" placeholder="Email Address">
+            <input type="password" id="reg-pass" placeholder="Password">
+            <button class="btn-action" onclick="handleAuth()">Enter Store</button>
+            <p id="auth-error" class="error-text"></p>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo" onclick="showPage('home')">VISIONARY.</div>
+        <nav>
+            <ul>
+                <li><a onclick="showPage('home')">HOME</a></li>
+                <li><a onclick="showPage('men')">MEN</a></li>
+                <li><a onclick="showPage('women')">WOMEN</a></li>
+                <li><a onclick="showPage('kids')">KIDS</a></li>
+                <li><a onclick="showPage('contact')">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <div class="hero home-bg"><h1>Master Edition</h1></div>
+            <div class="product-grid">
+                <div class="card"><img src="https://picsum.photos/seed/h1/800/1000" alt="H1"><h3>Elite 01</h3><div class="price">$250</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h2/800/1000" alt="H2"><h3>Elite 02</h3><div class="price">$255</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h3/800/1000" alt="H3"><h3>Elite 03</h3><div class="price">$230</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h4/800/1000" alt="H4"><h3>Elite 04</h3><div class="price">$290</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h5/800/1000" alt="H5"><h3>Elite 05</h3><div class="price">$210</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h6/800/1000" alt="H6"><h3>Elite 06</h3><div class="price">$275</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h7/800/1000" alt="H7"><h3>Elite 07</h3><div class="price">$220</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h8/800/1000" alt="H8"><h3>Elite 08</h3><div class="price">$245</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h9/800/1000" alt="H9"><h3>Elite 09</h3><div class="price">$260</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h10/800/1000" alt="H10"><h3>Elite 10</h3><div class="price">$285</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h11/800/1000" alt="H11"><h3>Elite 11</h3><div class="price">$215</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h12/800/1000" alt="H12"><h3>Elite 12</h3><div class="price">$235</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h13/800/1000" alt="H13"><h3>Elite 13</h3><div class="price">$250</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h14/800/1000" alt="H14"><h3>Elite 14</h3><div class="price">$295</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h15/800/1000" alt="H15"><h3>Elite 15</h3><div class="price">$205</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h16/800/1000" alt="H16"><h3>Elite 16</h3><div class="price">$265</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h17/800/1000" alt="H17"><h3>Elite 17</h3><div class="price">$225</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h18/800/1000" alt="H18"><h3>Elite 18</h3><div class="price">$240</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h19/800/1000" alt="H19"><h3>Elite 19</h3><div class="price">$270</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h20/800/1000" alt="H20"><h3>Elite 20</h3><div class="price">$280</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h21/800/1000" alt="H21"><h3>Elite 21</h3><div class="price">$220</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h22/800/1000" alt="H22"><h3>Elite 22</h3><div class="price">$235</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h23/800/1000" alt="H23"><h3>Elite 23</h3><div class="price">$255</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h24/800/1000" alt="H24"><h3>Elite 24</h3><div class="price">$245</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/h25/800/1000" alt="H25"><h3>Elite 25</h3><div class="price">$290</div></div>
+            </div>
+        </section>
+
+        <section id="men" class="page">
+            <div class="hero men-bg"><h1>Men's Elite</h1></div>
+            <div class="product-grid">
+                <div class="card"><img src="https://picsum.photos/seed/m1/800/1000" alt="M1"><h3>Men #01</h3><div class="price">$180</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m2/800/1000" alt="M2"><h3>Men #02</h3><div class="price">$195</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m3/800/1000" alt="M3"><h3>Men #03</h3><div class="price">$210</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m4/800/1000" alt="M4"><h3>Men #04</h3><div class="price">$225</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m5/800/1000" alt="M5"><h3>Men #05</h3><div class="price">$185</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m6/800/1000" alt="M6"><h3>Men #06</h3><div class="price">$240</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m7/800/1000" alt="M7"><h3>Men #07</h3><div class="price">$200</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m8/800/1000" alt="M8"><h3>Men #08</h3><div class="price">$215</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m9/800/1000" alt="M9"><h3>Men #09</h3><div class="price">$190</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m10/800/1000" alt="M10"><h3>Men #10</h3><div class="price">$230</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m11/800/1000" alt="M11"><h3>Men #11</h3><div class="price">$205</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m12/800/1000" alt="M12"><h3>Men #12</h3><div class="price">$220</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m13/800/1000" alt="M13"><h3>Men #13</h3><div class="price">$195</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m14/800/1000" alt="M14"><h3>Men #14</h3><div class="price">$250</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m15/800/1000" alt="M15"><h3>Men #15</h3><div class="price">$210</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m16/800/1000" alt="M16"><h3>Men #16</h3><div class="price">$185</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m17/800/1000" alt="M17"><h3>Men #17</h3><div class="price">$235</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m18/800/1000" alt="M18"><h3>Men #18</h3><div class="price">$200</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m19/800/1000" alt="M19"><h3>Men #19</h3><div class="price">$215</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m20/800/1000" alt="M20"><h3>Men #20</h3><div class="price">$190</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m21/800/1000" alt="M21"><h3>Men #21</h3><div class="price">$225</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m22/800/1000" alt="M22"><h3>Men #22</h3><div class="price">$240</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m23/800/1000" alt="M23"><h3>Men #23</h3><div class="price">$195</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m24/800/1000" alt="M24"><h3>Men #24</h3><div class="price">$205</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/m25/800/1000" alt="M25"><h3>Men #25</h3><div class="price">$210</div></div>
+            </div>
+        </section>
+
+        <section id="women" class="page">
+            <div class="hero women-bg"><h1>Lady Couture</h1></div>
+            <div class="product-grid">
+                <div class="card"><img src="https://picsum.photos/seed/w1/800/1000" alt="W1"><h3>Lady 01</h3><div class="price">$220</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w2/800/1000" alt="W2"><h3>Lady 02</h3><div class="price">$235</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w3/800/1000" alt="W3"><h3>Lady 03</h3><div class="price">$250</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w4/800/1000" alt="W4"><h3>Lady 04</h3><div class="price">$210</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w5/800/1000" alt="W5"><h3>Lady 05</h3><div class="price">$260</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w6/800/1000" alt="W6"><h3>Lady 06</h3><div class="price">$245</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w7/800/1000" alt="W7"><h3>Lady 07</h3><div class="price">$275</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w8/800/1000" alt="W8"><h3>Lady 08</h3><div class="price">$225</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w9/800/1000" alt="W9"><h3>Lady 09</h3><div class="price">$240</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w10/800/1000" alt="W10"><h3>Lady 10</h3><div class="price">$290</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w11/800/1000" alt="W11"><h3>Lady 11</h3><div class="price">$215</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w12/800/1000" alt="W12"><h3>Lady 12</h3><div class="price">$255</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w13/800/1000" alt="W13"><h3>Lady 13</h3><div class="price">$230</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w14/800/1000" alt="W14"><h3>Lady 14</h3><div class="price">$265</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w15/800/1000" alt="W15"><h3>Lady 15</h3><div class="price">$240</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w16/800/1000" alt="W16"><h3>Lady 16</h3><div class="price">$270</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w17/800/1000" alt="W17"><h3>Lady 17</h3><div class="price">$220</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w18/800/1000" alt="W18"><h3>Lady 18</h3><div class="price">$245</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w19/800/1000" alt="W19"><h3>Lady 19</h3><div class="price">$255</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w20/800/1000" alt="W20"><h3>Lady 20</h3><div class="price">$285</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w21/800/1000" alt="W21"><h3>Lady 21</h3><div class="price">$210</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w22/800/1000" alt="W22"><h3>Lady 22</h3><div class="price">$225</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w23/800/1000" alt="W23"><h3>Lady 23</h3><div class="price">$240</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w24/800/1000" alt="W24"><h3>Lady 24</h3><div class="price">$250</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/w25/800/1000" alt="W25"><h3>Lady 25</h3><div class="price">$265</div></div>
+            </div>
+        </section>
+
+        <section id="kids" class="page">
+            <div class="hero kids-bg"><h1>Junior Vision</h1></div>
+            <div class="product-grid">
+                <div class="card"><img src="https://picsum.photos/seed/k1/800/1000" alt="K1"><h3>Junior 01</h3><div class="price">$80</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k2/800/1000" alt="K2"><h3>Junior 02</h3><div class="price">$95</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k3/800/1000" alt="K3"><h3>Junior 03</h3><div class="price">$110</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k4/800/1000" alt="K4"><h3>Junior 04</h3><div class="price">$125</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k5/800/1000" alt="K5"><h3>Junior 05</h3><div class="price">$85</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k6/800/1000" alt="K6"><h3>Junior 06</h3><div class="price">$140</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k7/800/1000" alt="K7"><h3>Junior 07</h3><div class="price">$100</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k8/800/1000" alt="K8"><h3>Junior 08</h3><div class="price">$115</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k9/800/1000" alt="K9"><h3>Junior 09</h3><div class="price">$90</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k10/800/1000" alt="K10"><h3>Junior 10</h3><div class="price">$130</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k11/800/1000" alt="K11"><h3>Junior 11</h3><div class="price">$105</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k12/800/1000" alt="K12"><h3>Junior 12</h3><div class="price">$120</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k13/800/1000" alt="K13"><h3>Junior 13</h3><div class="price">$95</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k14/800/1000" alt="K14"><h3>Junior 14</h3><div class="price">$150</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k15/800/1000" alt="K15"><h3>Junior 15</h3><div class="price">$110</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k16/800/1000" alt="K16"><h3>Junior 16</h3><div class="price">$85</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k17/800/1000" alt="K17"><h3>Junior 17</h3><div class="price">$135</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k18/800/1000" alt="K18"><h3>Junior 18</h3><div class="price">$100</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k19/800/1000" alt="K19"><h3>Junior 19</h3><div class="price">$115</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k20/800/1000" alt="K20"><h3>Junior 20</h3><div class="price">$90</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k21/800/1000" alt="K21"><h3>Junior 21</h3><div class="price">$125</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k22/800/1000" alt="K22"><h3>Junior 22</h3><div class="price">$140</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k23/800/1000" alt="K23"><h3>Junior 23</h3><div class="price">$95</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k24/800/1000" alt="K24"><h3>Junior 24</h3><div class="price">$105</div></div>
+                <div class="card"><img src="https://picsum.photos/seed/k25/800/1000" alt="K25"><h3>Junior 25</h3><div class="price">$110</div></div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <input type="text" id="msg-name" placeholder="Name">
+                    <input type="email" id="msg-email" placeholder="Email">
+                    <textarea id="msg-content" placeholder="Message"></textarea>
+                    <button class="btn-action" onclick="saveMessage()">Send Message</button>
+                    <p id="msg-status"></p>
+                </div>
+                <div id="map-box">
+                    <iframe width="100%" height="100%" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.123!2d67.067!3d24.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzM2LjAiTiA2N8KwMDQnMDEuMiJF!5e0!3m2!1sen!2s!4v1700000000000"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div><h3 class="f-logo">VISIONARY.</h3></div>
+            <div><h3>EXPLORE</h3><li>Men's Series</li><li>Women's Cut</li><li>Junior Sports</li></div>
+            <div><h3>CARE</h3><li>Shipping</li><li>Refunds</li></div>
+            <div><h3>SOCIALS</h3><li>Instagram</li><li>Facebook</li></div>
+        </div>
+        <div class="copyright">© 2026 VISIONARY PREMIUM OPTICS.</div>
+    </footer>
+</body>
+<script src="app.js"></script>
+</html>
