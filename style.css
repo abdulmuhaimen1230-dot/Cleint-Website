@@ -1,3 +1,42 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Items ko niche move karne ke liye */
+    padding: 20px;
+    gap: 15px;
+}
+
+.card {
+    flex: 1 1 300px; /* Default size 300px, lekin jagah ke hisab se badh jayega */
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* --- Media Queries (Khan add karna hai: CSS ke bilkul niche) --- */
+
+/* Tablet ke liye (Max width 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Items ek ke niche ek ayenge */
+    }
+}
+
+/* Mobile ke liye (Max width 480px) */
+@media (max-width: 480px) {
+    .card {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
 :root {
     --primary: #0f172a;
     --accent: #d4af37;
